@@ -1,5 +1,5 @@
-import { Component, Input } from "@angular/core";
-
+import { Component, computed, input } from "@angular/core";
+//Input com I maiúsculo é o decorator e com i minúsculo é uma função especial
 @Component({
   selector: "app-user",
   standalone: true,
@@ -8,13 +8,12 @@ import { Component, Input } from "@angular/core";
   styleUrl: "./user.component.css",
 })
 export class UserComponent {
-  //Aqui definimos que a propriedade avatar será definida externamente, já que está com o decorator Input. A exclamação depois do nome da propriedade avatar diz ao typescrit que sabemos que essa propriedade definitivamente receberá algum valor, mesmo que o Typescrit não consiga ver isso no código
-  @Input({ required: true }) avatar!: string;
-  @Input({ required: true }) name!: string;
-
-  get imagePath() {
-    return "assets/users/" + this.avatar;
-  }
+  //diz ao angular que a propriedade avatar assumirá o valor de um input para esse componente. Podemos passar um valor inicial padrão entre os parênteses. Entre o símbolo <> podemos informar o tipo do input. Input Signals são readonly
+  avatar = input.required<string>();
+  name = input.required<string>();
+  imagePath = computed(() => {
+    return "assets/users/" + this.avatar();
+  });
 
   onSelectUser() {}
 }
