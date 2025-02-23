@@ -2,7 +2,24 @@
 <main>
   <ul id="users">
     <li>
-      <app-user />
+      <!--Aqui podemos usar a propriedade avatar definida no user.component.ts-->
+      <app-user [avatar]="users[0].avatar" [name]="users[0].name" />
+    </li>
+    <li>
+      <!--Aqui podemos usar a propriedade avatar definida no user.component.ts-->
+      <app-user [avatar]="users[1].avatar" [name]="users[1].name" />
+    </li>
+    <li>
+      <!--Aqui podemos usar a propriedade avatar definida no user.component.ts-->
+      <app-user [avatar]="users[2].avatar" [name]="users[2].name" />
+    </li>
+    <li>
+      <!--Aqui podemos usar a propriedade avatar definida no user.component.ts-->
+      <app-user [avatar]="users[3].avatar" [name]="users[3].name" />
+    </li>
+    <li>
+      <!--Aqui podemos usar a propriedade avatar definida no user.component.ts-->
+      <app-user [avatar]="users[4].avatar" [name]="users[2].name" />
     </li>
   </ul>
 </main>

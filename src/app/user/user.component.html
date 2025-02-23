@@ -1,9 +1,6 @@
 <div>
-  <!--click é um Event Listener. Para a IDE listar todos os eventos, basta digitar (), posicionar o cursor entre os parentêses e pressionar Ctlr + espaço -->
   <button (click)="onSelectUser()">
-    <!--aqui, em src, estamos executando o computed imagePath-->
-    <img [src]="imagePath()" [alt]="selectedUser().name" />
-    <!--para acessar um valor armazenado em um signal, devemos chamá-lo como uma função, isto é, devemos colocar seu nome e os parênteses ()-->
-    <span>{{ selectedUser().name }}</span>
+    <img [src]="imagePath" [alt]="name" />
+    <span>{{ name }}</span>
   </button>
 </div>
